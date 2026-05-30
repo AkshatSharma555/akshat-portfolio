@@ -1,5 +1,6 @@
 import { Navbar } from "./components/layout/Navbar";
 import DotGrid from "./components/react-bits/DotGrid";
+import { Hero } from "./components/sections/Hero";
 import { useTheme } from "./hooks/useTheme";
 
 const App = () => {
@@ -27,12 +28,12 @@ const App = () => {
       <Navbar />
 
       {/* SCROLLABLE CONTENT LAYER */}
-      <main className="relative z-10 w-full pt-32 pb-20 flex flex-col items-center">
-        <section className="h-screen w-full flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight opacity-50">
-            HERO SECTION
-          </h1>
-        </section>
+      <main className="relative z-10 w-full flex flex-col items-center">
+        
+        {/* NEW HERO SECTION */}
+        <Hero />
+
+        {/* SCROLL TEST SECTION */}
         <section className="h-screen w-full flex items-center justify-center bg-muted/20">
            <h2 className="text-3xl font-bold opacity-50">SCROLL TEST</h2>
         </section>
