@@ -12,14 +12,19 @@ export const HeroPortrait = () => {
         alt="Akshat Sharma"
         className="relative z-10 w-full h-full object-contain object-bottom"
         style={{
-          // Extra blue glow hata diya. Sirf dark shadow rakha hai 3D depth ke liye.
-          filter: `drop-shadow(15px 15px 30px rgba(0, 0, 0, 0.4))`,
+          filter: `drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25))`,
         }}
         draggable="false"
       />
 
-      {/* Ek halka sa overlay gradient portrait ke upar */}
       <div className="absolute inset-0 z-20 bg-gradient-to-tr from-blue-500/5 via-transparent to-transparent mix-blend-overlay rounded-b-full" />
+
+      {/* 🔥 THE FIX: FADE ONLY IN DARK MODE 🔥 
+          Yahan maine "hidden dark:block" laga diya hai. 
+          Iska matlab Light Mode me ye div bilkul nahi dikhega (sharp cut rahega),
+          aur Dark Mode me ye on ho jayega aur ekdum premium dark fade dega!
+      */}
+      <div className="hidden dark:block absolute bottom-0 left-0 w-full h-[18%] bg-gradient-to-t from-background via-background/90 to-transparent z-30 pointer-events-none" />
     </motion.div>
   );
 };

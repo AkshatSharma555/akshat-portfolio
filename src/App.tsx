@@ -1,6 +1,7 @@
 import { Navbar } from "./components/layout/Navbar";
 import DotGrid from "./components/react-bits/DotGrid";
 import { Hero } from "./components/sections/Hero";
+import { TechStackMarquee } from "./components/ui/TechStackMarquee"; // Yahan Import Add Kiya Hai
 import { useTheme } from "./hooks/useTheme";
 
 const App = () => {
@@ -32,6 +33,12 @@ const App = () => {
         
         {/* NEW HERO SECTION */}
         <Hero />
+
+        {/* ==========================================
+            INFINITE TECH STACK MARQUEE 
+            Acts as a seamless transition after Hero
+        ========================================== */}
+        <TechStackMarquee />
 
         {/* SCROLL TEST SECTION */}
         <section className="h-screen w-full flex items-center justify-center bg-muted/20">
