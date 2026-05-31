@@ -1,7 +1,8 @@
 import { Navbar } from "./components/layout/Navbar";
 import DotGrid from "./components/react-bits/DotGrid";
 import { Hero } from "./components/sections/Hero";
-import { TechStackMarquee } from "./components/ui/TechStackMarquee"; // Yahan Import Add Kiya Hai
+import { TechStackMarquee } from "./components/ui/TechStackMarquee";
+import { About } from "./components/sections/About";
 import { useTheme } from "./hooks/useTheme";
 
 const App = () => {
@@ -9,8 +10,6 @@ const App = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-background text-foreground transition-colors duration-300">
-      
-      {/* BACKGROUND LAYER (Strict Removal with Viewport Size Guarantee) */}
       {theme === "dark" && (
         <div className="fixed top-0 left-0 w-screen h-screen z-0 overflow-hidden pointer-events-none">
           <DotGrid
@@ -25,27 +24,17 @@ const App = () => {
         </div>
       )}
 
-      {/* NAVBAR */}
       <Navbar />
 
-      {/* SCROLLABLE CONTENT LAYER */}
       <main className="relative z-10 w-full flex flex-col items-center">
-        
-        {/* NEW HERO SECTION */}
         <Hero />
-
-        {/* ==========================================
-            INFINITE TECH STACK MARQUEE 
-            Acts as a seamless transition after Hero
-        ========================================== */}
         <TechStackMarquee />
+        <About />
 
-        {/* SCROLL TEST SECTION */}
-        <section className="h-screen w-full flex items-center justify-center bg-muted/20">
-           <h2 className="text-3xl font-bold opacity-50">SCROLL TEST</h2>
+        <section className="h-[50vh] w-full flex items-center justify-center bg-muted/20">
+          <h2 className="text-3xl font-bold opacity-50">END OF ABOUT SECTION</h2>
         </section>
       </main>
-
     </div>
   );
 };
